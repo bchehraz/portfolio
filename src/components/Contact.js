@@ -18,7 +18,7 @@ const Form = styled.form`
 
 const Input = styled.input`
   width: 100%;
-  background-color: ${({ valid }) => (valid && '#99ffcc') || '#fff'};
+  background: ${({ valid }) => (valid && '#99ffcc') || '#fff'};
   padding: 1em;
   outline: red;
   margin: 1em 0;
@@ -33,6 +33,11 @@ const Input = styled.input`
   :focus {
     background-color: ${({ valid }) => (valid && '#99ffcc') || '#99ccff'};
   }
+
+  :-webkit-autofill,
+  :-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px ${({ valid }) => (valid && '#99ffcc') || '#99ccff'} inset;
+  }
 `;
 
 const Label = styled.label`
@@ -41,7 +46,6 @@ const Label = styled.label`
 `;
 
 const FormSection = styled.div`
-  visibility: ${({ showing }) => (showing || 'hidden') || 'visible'};
   display: ${({ showing }) => (showing || 'none') || 'block'};
 `;
 
@@ -70,7 +74,6 @@ class Contact extends React.Component {
 
   onEmailChange(e) {
     const valid = this.validateEmail();
-    console.log('(onEmailChange) EMAIL VALIDATION STEP: ' + valid);
     this.setState({
       email: e.target.value,
       emailValid: valid,
@@ -105,17 +108,17 @@ class Contact extends React.Component {
     } = this.state;
     return (
       <FormContainer>
-        <Form onSubmit={this.handleSubmit} autoComplete="false">
+        <Form onSubmit={this.handleSubmit}>
           <FormSection showing>
             <input type="hidden" value="prayer" />
             <Label>Name</Label>
             <Input
               type="text"
               name="name"
-              placeholder="Fill with your name"
+              placeholder="Fill in your name"
               onChange={this.onNameChange}
               valid={name.length > 0}
-              autoComplete="false"
+              autoComplete="name"
             />
           </FormSection>
           <FormSection showing={(name)}>
