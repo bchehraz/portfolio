@@ -38,6 +38,11 @@ const Input = styled.input`
   :-webkit-autofill:focus {
     -webkit-box-shadow: 0 0 0 1000px ${({ valid }) => (valid && '#99ffcc') || '#99ccff'} inset;
   }
+
+  :autofill,
+  :autofill:focus {
+    background-color: ${({ valid }) => (valid && '#99ffcc') || '#99ccff'};
+  }
 `;
 
 const Label = styled.label`
