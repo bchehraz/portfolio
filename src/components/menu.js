@@ -12,7 +12,7 @@ const MenuOuterContainer = styled.div`
   top: 0;
   left: 0;
 
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   z-index: ${props => (props.isOpen && 5) || -1};
   background-color: rgba(255, 255, 255, 1);
@@ -79,10 +79,10 @@ class Menu extends React.Component {
       <Container>
         <MenuButton isOpen={isOpen} onMouseDown={this.toggleMenu} />
         <MenuOuterContainer isOpen={isOpen} onMouseDown={this.closeMenu}>
-          <Link to="/"><h1>About</h1></Link>
-          <Link to="/portfolio"><h1>Portfolio</h1></Link>
-          <Link to="/labs"><h1>Labs</h1></Link>
-          <Link to="/contact"><h1>Contact Me</h1></Link>
+          <Link to="/"><h2>About</h2></Link>
+          <Link to="/portfolio"><h2>Portfolio</h2></Link>
+          <Link to="/labs"><h2>Labs</h2></Link>
+          <Link to="/contact"><h2>Contact Me</h2></Link>
         </MenuOuterContainer>
       </Container>
     );

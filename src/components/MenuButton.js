@@ -10,7 +10,6 @@ const Burger = styled.div`
   height: 40px;
   margin: 0 auto;
   width: 50px;
-  cursor: pointer;
   z-index: 6;
 `;
 
@@ -25,7 +24,6 @@ const Bar = styled.div`
   &:last-child {
     width: 60%;
   }
-  cursor: pointer;
 `;
 
 const Container = styled.div`
@@ -34,12 +32,13 @@ const Container = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 0.5em;
   -webkit-transition: all 300ms ease-in-out;
   -moz-transition: all 300ms ease-in-out;
   -ms-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
+  cursor: pointer;
 `;
 
 const MenuButtonText = styled.span`

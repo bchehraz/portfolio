@@ -6,6 +6,7 @@ import {
   AwesomeButtonSocial,
 } from 'react-awesome-button';
 import 'react-awesome-button/dist/themes/theme-blue.css';
+import Axios from 'axios';
 
 const FormContainer = styled.div`
   background-color: #fff;
@@ -54,6 +55,15 @@ const FormSection = styled.div`
   display: ${({ showing }) => (showing || 'none') || 'block'};
 `;
 
+const styles = {
+  input: {
+    backgroundColor: 'white',
+  },
+  valid: {
+    backgroundColor: 'green',
+  },
+};
+
 class Contact extends React.Component {
   constructor() {
     super();
@@ -69,8 +79,8 @@ class Contact extends React.Component {
     this.onEmailChange = this.onEmailChange.bind(this);
     this.onMessageChange = this.onMessageChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.validate = this.validate.bind(this);
     this.validateEmail = this.validateEmail.bind(this);
+    this.onMessageFocus = this.onMessageFocus.bind(this);
   }
 
   onNameChange(e) {
@@ -89,19 +99,21 @@ class Contact extends React.Component {
     this.setState({ message: e.target.value });
   }
 
-  handleSubmit(e) {
-    if (!this.validate()) {
-      e.preventDefault();
-    }
-  }
-
   validateEmail() {
     const { email } = this.state;
     return /\S+@\S+\.\S+/.test(email);
   }
 
-  validate() {
-    return false;
+  // test function
+  onMessageFocus() {
+    const valid = this.validateEmail();
+    this.setState({
+      emailValid: valid,
+    });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
   }
 
   render() {
@@ -136,9 +148,10 @@ class Contact extends React.Component {
               value={email}
               onChange={this.onEmailChange}
               valid={email && emailValid}
+              onKeyPress={this.onEmailChange}
             />
           </FormSection>
-          <FormSection showing={email && emailValid}>
+          <FormSection showing={email}>
             <Label>Message:</Label>
             <Input
               autoComplete="disable"
@@ -148,10 +161,14 @@ class Contact extends React.Component {
               value={message}
               onChange={this.onMessageChange}
               valid={message.length > 9}
+              onFocus={this.onMessageFocus}
             />
           </FormSection>
           <FormSection showing>
             <button type="submit">Send Message</button>
+            <AwesomeButtonProgress type="primary">
+              Send Message
+            </AwesomeButtonProgress>
           </FormSection>
         </Form>
         <h2>Output (testing reasons):</h2>

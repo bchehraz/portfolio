@@ -17,6 +17,19 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       name: 'slug',
       value: slug,
     });
+
+    let parentPath = '/';
+    if (/^\/portfolio/.test(slug)) {
+      parentPath = '/portfolio/';
+    } else {
+      parentPath = '/labs/';
+    }
+    createNodeField({
+      node,
+      name: 'parentPath',
+      value: parentPath,
+    });
+    console.log("PATH: " + parentPath);
   }
 };
 

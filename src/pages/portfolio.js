@@ -51,7 +51,7 @@ const PortfolioPage = ({ data }) => {
         <h2>Check out my latest web software development portfolio projects</h2>
       </Container>
       <ProjectsContainer>
-        {projects.map(({ node }) => (
+        {projects.map(({ node }, index) => (
           <Link to={node.fields.slug} key={node.id}>
             <ProjectListing
               title={node.frontmatter.title}
@@ -59,6 +59,7 @@ const PortfolioPage = ({ data }) => {
               startDate={node.frontmatter.startDate}
               duration={node.frontmatter.duration}
               type={node.frontmatter.type}
+              index={index}
             />
           </Link>
         ))}

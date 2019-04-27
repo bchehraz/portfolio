@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 import Header from './header';
 import Footer from './footer';
-import './layout.sass';
+import './layoutNew.css';
 
 const Layout = ({ children, showFooter }) => (
   <StaticQuery
@@ -47,22 +47,29 @@ const Layout = ({ children, showFooter }) => (
           <html lang="en" />
         </Helmet>
         <div style={{
-          height: 'auto',
+          borderTop: '3px solid #0099ff',
         }}
         >
-          <Header />
-          <div
-            style={{
-              margin: '0 auto',
-              padding: '0',
-            }}
+          <div style={{
+            height: 'auto',
+            maxWidth: '1250px',
+            margin: '0 auto',
+          }}
           >
-            {children}
+            <Header />
+            <div
+              style={{
+                margin: '0 auto',
+                padding: '0',
+              }}
+            >
+              {children}
+            </div>
+            <Footer
+              showing={showFooter}
+            />
           </div>
         </div>
-        <Footer
-          showing={showFooter}
-        />
       </>
     )}
   />

@@ -9,13 +9,17 @@ import 'react-awesome-button/dist/themes/theme-blue.css';
 import Layout from '../components/layout';
 
 const Container = styled.div`
-  padding: 0;
+  padding: 1em 1em;
   margin: 0 auto;
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-start;
   width: 100vw;
   max-width: 1000px;
+
+  @media only screen and (min-width: 800px) {
+    padding: 1em 2em;
+  }
 `;
 
 const LinkContainer = styled.div`
@@ -23,6 +27,29 @@ const LinkContainer = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  align-items: center;
+
+  div:nth-child(2) {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  div:first-child {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  @media only screen and (min-width: 650px) {
+    div:nth-child(2),
+    div:first-child {
+      flex-flow: row nowrap;
+    }
+  }
+
+  @media only screen and (min-width: 500px) {
+    div:first-child {
+      flex-flow: row nowrap;
+    }
+  }
 `;
 
 const DisqusContainer = styled.div`
@@ -40,7 +67,7 @@ const Disqus = styled.div`
 `;
 
 const Content = styled.div`
-  padding: 2em 0;
+  padding: 1em 0;
 `;
 
 const ButtonSpan = styled.span`

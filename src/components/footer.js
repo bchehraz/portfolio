@@ -8,7 +8,7 @@ const Container = styled.div`
   justify-content: flex-start;
   align-items: center;
   padding: 0;
-  width: 100vw;
+  width: 100%;
   margin: 0 auto;
 
   a {
@@ -31,7 +31,7 @@ const Footer = ({ showing }) => (
     <div
       style={{
         margin: '0 auto',
-        maxWidth: '100vw',
+        maxWidth: '100%',
         padding: '1em',
         display: 'flex',
         flexDirection: 'row',

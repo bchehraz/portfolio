@@ -52,12 +52,13 @@ const LabsPage = ({ data }) => {
         <h2>ReactJS Components, Articles, and anything else accomplished on my spare time.</h2>
       </Container>
       <LabsContainer>
-        {labs.map(({ node }) => (
+        {labs.map(({ node }, index) => (
           <Link to={node.fields.slug} key={node.id}>
             <LabListing
               title={node.frontmatter.title}
               date={node.frontmatter.date}
               type={node.frontmatter.type}
+              index={index}
             />
           </Link>
         ))}

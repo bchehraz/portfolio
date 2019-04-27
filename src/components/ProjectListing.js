@@ -11,8 +11,16 @@ import { Link } from 'gatsby';
 // Eventually its data will be retrieved with GraphQL and the Frontmatters in the .md files
 const Container = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   justify-content: space-between;
+  align-items: baseline;
+
+  @media only screen and (min-width: 600px) {
+    flex-direction: row;
+  }
+`;
+
+const HeaderContainer = styled.div`
 `;
 
 const DateContainer = styled.div`
@@ -26,19 +34,21 @@ const DateContainer = styled.div`
 const LinksContainer = styled.div`
   display: flex;
   flex-direction: column;
-  text-align: right;
+  text-align: left;
+  white-space: nowrap;
 `;
 
 const ListingContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 2em 1em;
-  border: 2px solid white;
+  border: 3px solid white;
   border-radius: 25px;
   background-color: rgba(3,3,3,0.3);
-  background-color: ${props => (props.type === 'webApp' && '#aa77dd') || '#aadd77'};
-  white-space: nowrap;
-  width: auto;
+  background-color: ${props => props.randomColor};
+  max-width: 100vw;
+  min-height: 300px;
 
   -webkit-transition: all 250ms ease-in-out;
   -moz-transition: all 250ms ease-in-out;
@@ -47,41 +57,68 @@ const ListingContainer = styled.div`
   transition: all 250ms ease-in-out;
 
   &:hover {
-    background-color: ${props => (props.type === 'webApp' && '#cc99ff') || '#ccff99'};
-    border: 2px solid black
+    background-color: white;
+    border: 3px solid ${props => props.randomColor};
+    border-bottom-width: 1em;
+    padding-bottom: 1.5em;
+  }
+
+  h1 {
+    font-size: 2em;
   }
 `;
 
-const Subheading = styled.h5`
+const Subheading = styled.p`
   margin: 0;
   padding: 0;
 `;
 
-const ProjectListing = ({
-  title,
-  demoLink,
-  blogLink,
-  githubLink,
-  duration,
-  startDate,
-  description,
-  type,
-}) => (
-  <ListingContainer type={type}>
-    <Container>
-      <div>
-        <h1>{title}</h1>
-        <h4>{description}</h4>
-      </div>
-      <LinksContainer>
-        <Subheading>{(type === 'mobileApp') ? 'Mobile App' : 'Web App'}</Subheading>
-      </LinksContainer>
-    </Container>
-    <DateContainer>
-      <Subheading>{startDate}</Subheading>
-      <Subheading>{duration}</Subheading>
-    </DateContainer>
-  </ListingContainer>
-);
+class ProjectListing extends React.Component {
+  constructor(props) {
+    super(props);
+
+    let randomValue = 0;
+    const newIndex = props.index % 8;
+
+    if (Math.floor(props.index / 8) % 2 === 0) {
+      randomValue = Math.floor(Math.random() * 16) + 128 + (16 * (newIndex));
+    } else {
+      randomValue = Math.floor(Math.random() * 16) + 128 + (16 * (7 - newIndex));
+    }
+
+    this.state = {
+      randomColor: `#00${randomValue.toString(16)}ff`,
+    };
+  }
+
+  render() {
+    const {
+      title,
+      duration,
+      startDate,
+      description,
+      type,
+    } = this.props;
+
+    const { randomColor } = this.state;
+    return (
+      <ListingContainer randomColor={randomColor}>
+        <Container>
+          <HeaderContainer>
+            <h1>{title}</h1>
+            <p>{description}</p>
+          </HeaderContainer>
+          <LinksContainer>
+            <Subheading>{(type === 'mobileApp') ? 'Mobile App' : 'Web App'}</Subheading>
+          </LinksContainer>
+        </Container>
+        <DateContainer>
+          <Subheading>{startDate}</Subheading>
+          <Subheading>{duration}</Subheading>
+        </DateContainer>
+      </ListingContainer>
+    );
+  }
+}
 
 export default ProjectListing;
