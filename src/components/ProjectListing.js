@@ -46,7 +46,7 @@ const ListingContainer = styled.div`
   border: 3px solid white;
   border-radius: 25px;
   background-color: rgba(3,3,3,0.3);
-  background-color: ${props => props.randomColor};
+  background-color: ${props => props.colors[1]};
   max-width: 100vw;
   min-height: 300px;
 
@@ -58,7 +58,7 @@ const ListingContainer = styled.div`
 
   &:hover {
     background-color: white;
-    border: 3px solid ${props => props.randomColor};
+    border: 3px solid ${props => props.colors[0]};
     border-bottom-width: 1em;
     padding-bottom: 1.5em;
   }
@@ -87,7 +87,8 @@ class ProjectListing extends React.Component {
     }
 
     this.state = {
-      randomColor: `#00${randomValue.toString(16)}ff`,
+      colorHEX: `#00${randomValue.toString(16)}ff`,
+      colorRGBA: `rgba(0, ${randomValue}, 255, 0.75)`,
     };
   }
 
@@ -100,9 +101,9 @@ class ProjectListing extends React.Component {
       type,
     } = this.props;
 
-    const { randomColor } = this.state;
+    const { colorHEX, colorRGBA } = this.state;
     return (
-      <ListingContainer randomColor={randomColor}>
+      <ListingContainer colors={[ colorHEX, colorRGBA ]}>
         <Container>
           <HeaderContainer>
             <h1>{title}</h1>

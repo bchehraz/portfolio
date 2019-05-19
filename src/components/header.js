@@ -64,6 +64,10 @@ const Container = styled.div`
   @media only screen and (min-width: 800px) {
     padding: 1em 2em;
   }
+
+  @media only screen and (min-width: 1000px) {
+    max-width: 100%;
+  }
 `;
 
 const HeadingContainer = styled.div`
@@ -75,7 +79,7 @@ const HeadingContainer = styled.div`
 `;
 
 const Name = 'Babak Chehraz';
-const JobName = 'Software1Developer';
+const JobName = 'Software Developer';
 
 const Header = () => (
   <Container>

@@ -58,7 +58,7 @@ const ButtonSpan = styled.div`
 
 const AuthorContainer = styled.div`
   border-top: 2px solid black;
-  padding: 1em;
+  padding: 1em 0;
 
   display: flex;
   flex-flow: row wrap;

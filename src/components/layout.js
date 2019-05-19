@@ -52,7 +52,7 @@ const Layout = ({ children, showFooter }) => (
         >
           <div style={{
             height: 'auto',
-            maxWidth: '1250px',
+            maxWidth: '100%',
             margin: '0 auto',
           }}
           >

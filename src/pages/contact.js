@@ -1,11 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import {
-  AwesomeButton,
-  AwesomeButtonProgress,
   AwesomeButtonSocial,
 } from 'react-awesome-button';
-import 'react-awesome-button/dist/themes/theme-blue.css';
 import Layout from '../components/layout';
 import Contact from '../components/Contact';
 
@@ -20,7 +17,7 @@ const Container = styled.div`
 `;
 
 const ButtonContainer = styled.div`
-  padding: 4px;
+  padding: 0.5rem;
   white-space: nowrap;
 `;
 
@@ -29,7 +26,7 @@ const ContactPage = () => (
     <Container>
       <h1>Get in touch</h1>
       <p>
-        {'If you wanna get in touch, talk to me about a project collaboration or just say hi, fill out the form below or send an email to babak.dev@gmail.com and let\'s talk.'}
+        {'If you wanna get in touch, talk to me about a project collaboration or just say hi, fill out the form below or send an email to babak.chehraz@gmail.com and let\'s talk.'}
       </p>
       <Contact />
 
@@ -73,7 +70,7 @@ const ContactPage = () => (
           <AwesomeButtonSocial
             type="instagram"
             ripple
-            href="https://www.instagram.com/babakthedev"
+            href="https://www.instagram.com/babak.dev"
             target="_blank"
             size="large"
           >

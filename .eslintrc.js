@@ -1,15 +1,17 @@
 module.exports = {
-  "extends": "airbnb",
+  "parser": "babel-eslint",
   "settings": {
-    "import/core-modules": ["react", "prop-types", "config"]
-  },
-  "globals": {
-      "graphql": true,
-      "fetch": true
+    "react": {
+      version: "detect",
     },
+  },
   "rules": {
-    "react/jsx-filename-extension": 0,
-    "react/prop-types": 0,
-    "react/no-danger": 0,
-  }
+    "strict": 0,
+    "no-unused-vars": 1,
+    "react/prop-types": 1,
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ]
 };
