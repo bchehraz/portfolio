@@ -3,8 +3,9 @@ import funstonTheme from 'typography-theme-funston';
 import stowLakeTheme from 'typography-theme-stow-lake';
 import grandViewTheme from 'typography-theme-grand-view';
 import kirkham from 'typography-theme-kirkham';
+import moraga from 'typography-theme-moraga';
 
-const typography = new Typography(kirkham);
+const typography = new Typography(moraga);
 
 // const typography = new Typography({
 //   baseFontSize: '18px',

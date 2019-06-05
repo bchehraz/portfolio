@@ -44,7 +44,7 @@ const ListingContainer = styled.div`
   justify-content: space-between;
   padding: 2em 1em;
   border: 3px solid white;
-  border-radius: 25px;
+  border-radius: 0;
   background-color: rgba(3,3,3,0.3);
   background-color: ${props => props.colors[1]};
   max-width: 100vw;
@@ -57,10 +57,11 @@ const ListingContainer = styled.div`
   transition: all 250ms ease-in-out;
 
   &:hover {
-    background-color: white;
-    border: 3px solid ${props => props.colors[0]};
-    border-bottom-width: 1em;
-    padding-bottom: 1.5em;
+    background-color: ${props => props.colors[0]};
+    color: #000;
+    border-bottom-color: #333;
+    padding: 1.9em 1em;
+    background-color: rgba(0, ${props => props.randomValue}, 255, 0.75);
   }
 
   h1 {
@@ -88,7 +89,8 @@ class ProjectListing extends React.Component {
 
     this.state = {
       colorHEX: `#00${randomValue.toString(16)}ff`,
-      colorRGBA: `rgba(0, ${randomValue}, 255, 0.75)`,
+      colorRGBA: `rgba(0, ${randomValue}, 255, 0.5)`,
+      randomValue: randomValue,
     };
   }
 
@@ -101,16 +103,16 @@ class ProjectListing extends React.Component {
       type,
     } = this.props;
 
-    const { colorHEX, colorRGBA } = this.state;
+    const { colorHEX, colorRGBA, randomValue } = this.state;
     return (
-      <ListingContainer colors={[ colorHEX, colorRGBA ]}>
+      <ListingContainer colors={[ colorHEX, colorRGBA ]} randomValue={randomValue}>
         <Container>
           <HeaderContainer>
             <h1>{title}</h1>
             <p>{description}</p>
           </HeaderContainer>
           <LinksContainer>
-            <Subheading>{(type === 'mobileApp') ? 'Mobile App' : 'Web App'}</Subheading>
+            <Subheading>{(type === 'mobileApp') ? 'Mobile' : 'Website'}</Subheading>
           </LinksContainer>
         </Container>
         <DateContainer>

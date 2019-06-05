@@ -137,43 +137,41 @@ const Project = ({ data }) => {
               </ButtonSpan>
             )}
           </div>
-          <div>
-            <ButtonSpan>
-              <AwesomeButtonSocial
-                type="facebook"
-                url={`${WEB_URL}${slug}`}
-                ripple
-              />
-            </ButtonSpan>
-            <ButtonSpan>
-              <AwesomeButtonSocial
-                type="twitter"
-                url={`${WEB_URL}${slug}`}
-                ripple
-              />
-            </ButtonSpan>
-            <ButtonSpan>
-              <AwesomeButtonSocial
-                type="gplus"
-                url={`${WEB_URL}${slug}`}
-                ripple
-              />
-            </ButtonSpan>
-          </div>
         </LinkContainer>
         <ImageContainer />
         <Content
           dangerouslySetInnerHTML={{ __html: project.html }}
         />
-        <DisqusContainer>
-          <Disqus>
-            <h1>DISQUS Container</h1>
-          </Disqus>
-        </DisqusContainer>
       </Container>
     </Layout>
   );
 };
+
+/* SOCIAL SHARE BUTTONS
+<div>
+  <ButtonSpan>
+    <AwesomeButtonSocial
+      type="facebook"
+      url={`${WEB_URL}${slug}`}
+      ripple
+    />
+  </ButtonSpan>
+  <ButtonSpan>
+    <AwesomeButtonSocial
+      type="twitter"
+      url={`${WEB_URL}${slug}`}
+      ripple
+    />
+  </ButtonSpan>
+  <ButtonSpan>
+    <AwesomeButtonSocial
+      type="gplus"
+      url={`${WEB_URL}${slug}`}
+      ripple
+    />
+  </ButtonSpan>
+</div>
+*/
 
 export default Project;
 

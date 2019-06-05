@@ -168,14 +168,14 @@ class IndexPage extends React.Component {
           <div>
             <h1>{'Hi, I\'m a Software Developer from Fresno, California.'}</h1>
             <h1>I can help you build your next website.</h1>
-            <p>I design and build responsive full-stack web applications</p>
-            <p>
+            <h2>I design and build responsive full-stack web applications</h2>
+            <h2>
               {'Have a project you\'d like to discuss? '}
               {'Let\'s chat! '}
               <a href="mailto:babak.chehraz@gmail.com">
                 <EmailText>babak.chehraz@gmail.com</EmailText>
               </a>
-            </p>
+            </h2>
           </div>
           <div
             onClick={() => this.scroll(this.projectsRef)}
@@ -199,7 +199,7 @@ class IndexPage extends React.Component {
         }
         <div>
           <ProjectsHeaderContainer ref={this.projectsRef}>
-            <h2><span id="projects">Portfolio</span></h2>
+            <h2><span id="projects">Recent Projects</span></h2>
             <h3><Link to="/portfolio">See All</Link></h3>
           </ProjectsHeaderContainer>
           <ProjectsContainer>
@@ -281,7 +281,7 @@ class IndexPage extends React.Component {
         </div>
         <div>
           <LabsHeaderContainer>
-            <h2>Code Labs</h2>
+            <h2>Recent Articles</h2>
             <h3><Link to="/labs">See All</Link></h3>
           </LabsHeaderContainer>
           <LabsContainer>

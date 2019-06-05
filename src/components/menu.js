@@ -79,7 +79,7 @@ class Menu extends React.Component {
       <Container>
         <MenuButton isOpen={isOpen} onMouseDown={this.toggleMenu} />
         <MenuOuterContainer isOpen={isOpen} onMouseDown={this.closeMenu}>
-          <Link to="/"><h2>About</h2></Link>
+          <Link to="/me"><h2>Me</h2></Link>
           <Link to="/portfolio"><h2>Portfolio</h2></Link>
           <Link to="/labs"><h2>Labs</h2></Link>
           <Link to="/contact"><h2>Contact Me</h2></Link>
