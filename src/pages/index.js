@@ -5,8 +5,8 @@ import { FaChevronDown } from 'react-icons/fa';
 
 import Layout from '../components/layout';
 import FloatingIcon from '../components/FloatingIcon';
-import ProjectListing from '../components/ProjectListing';
 import LabListing from '../components/LabListing';
+import ProjectsList from '../components/ProjectsList';
 
 const HeadingContainer = styled.div`
   display: flex;
@@ -202,100 +202,7 @@ class IndexPage extends React.Component {
             <h2><span id="projects">Recent Projects</span></h2>
             <h3><Link to="/portfolio">See All</Link></h3>
           </ProjectsHeaderContainer>
-          <ProjectsContainer>
-            {projects.map(({ node }, index) => (index < 8) && (
-              <Link to={node.fields.slug} key={node.id}>
-                <ProjectListing
-                  title={node.frontmatter.title}
-                  description={node.frontmatter.description}
-                  startDate={node.frontmatter.startDate}
-                  duration={node.frontmatter.duration}
-                  type={node.frontmatter.type}
-                  index={index}
-                />
-              </Link>
-            ))}
-            <ProjectListing
-              title="GoalTrackr: The Alternative to Long Titles"
-              description="React JS, Gatsby, GraphQL"
-              startDate="November 2018"
-              duration="3 months"
-              type="webApp"
-              index={1}
-            />
-            <ProjectListing
-              title="GoalTrackr"
-              description="React JS, Gatsby, GraphQL"
-              startDate="November 2018"
-              duration="3 months"
-              type="webApp"
-              index={2}
-            />
-            <ProjectListing
-              title="Authentication"
-              description="React Native, GraphQL"
-              startDate="November 2018"
-              duration="3 months"
-              type="mobileApp"
-              index={3}
-            />
-            <ProjectListing
-              title="GoalTrackr"
-              description="React JS, Gatsby, GraphQL"
-              startDate="November 2018"
-              duration="3 months"
-              type="webApp"
-              index={4}
-            />
-            <ProjectListing
-              title="Authentication"
-              description="React Native, GraphQL"
-              demoLink="/Authentication"
-              blogLink="/Authentication/blog"
-              startDate="November 2018"
-              duration="3 months"
-              type="mobileApp"
-              index={5}
-            />
-            <ProjectListing
-              title="GoalTrackr"
-              description="React JS, Gatsby, GraphQL"
-              demoLink="/GoalTrackr"
-              blogLink="/GoalTrackr/blog"
-              startDate="November 2018"
-              duration="3 months"
-              type="webApp"
-              index={6}
-            />
-            <ProjectListing
-              title="GoalTrackr"
-              description="React JS, Gatsby, GraphQL"
-              demoLink="/GoalTrackr"
-              blogLink="/GoalTrackr/blog"
-              startDate="November 2018"
-              duration="3 months"
-              type="webApp"
-              index={7}
-            />
-          </ProjectsContainer>
-        </div>
-        <div>
-          <LabsHeaderContainer>
-            <h2>Recent Articles</h2>
-            <h3><Link to="/labs">See All</Link></h3>
-          </LabsHeaderContainer>
-          <LabsContainer>
-            {labs.map(({ node }, index) => (index < 8) && (
-              <Link to={node.fields.slug} key={node.id}>
-                <LabListing
-                  title={node.frontmatter.title}
-                  date={node.frontmatter.date}
-                  type={node.frontmatter.type}
-                  index={index}
-                />
-              </Link>
-            ))}
-          </LabsContainer>
+          <ProjectsList projects={projects} limit={6}/>
         </div>
       </Layout>
     );
@@ -303,6 +210,27 @@ class IndexPage extends React.Component {
 }
 
 export default IndexPage;
+
+/* for having labs
+<div>
+  <LabsHeaderContainer>
+    <h2>Recent Articles</h2>
+    <h3><Link to="/labs">See All</Link></h3>
+  </LabsHeaderContainer>
+  <LabsContainer>
+    {labs.map(({ node }, index) => (index < 8) && (
+      <Link to={node.fields.slug} key={node.id}>
+        <LabListing
+          title={node.frontmatter.title}
+          date={node.frontmatter.date}
+          type={node.frontmatter.type}
+          index={index}
+        />
+      </Link>
+    ))}
+  </LabsContainer>
+</div>
+*/
 
 export const query = graphql`
   query {
