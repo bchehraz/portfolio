@@ -34,7 +34,8 @@ type: "webApp"
 <h2>Resources</h2>
 <ul>
   <li>
-    Learn more about how Gatsby works at <a href="https://www.gatsbyjs.org/" target="_blank">https://www.gatsbyjs.org/</a>
+    Learn more about how Gatsby works at
+    <a href="https://www.gatsbyjs.org/" target="_blank">https://www.gatsbyjs.org/</a>
   </li>
   <li>
     Inspired by...

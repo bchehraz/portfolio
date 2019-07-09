@@ -81,10 +81,16 @@ class ProjectListing extends React.Component {
     let randomValue = 0;
     const newIndex = props.index % 8;
 
+    // if (Math.floor(props.index / 8) % 2 === 0) {
+    //   randomValue = Math.floor(Math.random() * 16) + 128 + (16 * (newIndex));
+    // } else {
+    //   randomValue = Math.floor(Math.random() * 16) + 128 + (16 * (7 - newIndex));
+    // }
+
     if (Math.floor(props.index / 8) % 2 === 0) {
-      randomValue = Math.floor(Math.random() * 16) + 128 + (16 * (newIndex));
-    } else {
       randomValue = Math.floor(Math.random() * 16) + 128 + (16 * (7 - newIndex));
+    } else {
+      randomValue = Math.floor(Math.random() * 16) + 128 + (16 * (newIndex));
     }
 
     this.state = {
@@ -112,7 +118,7 @@ class ProjectListing extends React.Component {
             <p>{description}</p>
           </HeaderContainer>
           <LinksContainer>
-            <Subheading>{(type === 'mobileApp') ? 'Mobile' : 'Website'}</Subheading>
+            <Subheading>{(type === 'mobileApp') ? 'Mobile' : 'Web'}</Subheading>
           </LinksContainer>
         </Container>
         <DateContainer>
