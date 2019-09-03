@@ -13,5 +13,13 @@ module.exports = {
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended"
-  ]
+  ],
+  "globals": {
+    "fetch": false,
+    "console": false,
+    "exports": false,
+    "window": false,
+    "module": false,
+    "Promise": false
+  }
 };
