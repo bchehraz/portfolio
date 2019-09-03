@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "bchehraz-portfolio",
+  "description": "Babak Chehraz Portfolio",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Babak Chehraz <babak.chehraz@gmail.com>",
   "dependencies": {
     "axios": "^0.18.0",
     "babel-plugin-styled-components": "^1.9.1",
@@ -42,7 +42,7 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
