@@ -16,10 +16,6 @@ const Container = styled.div`
   }
 `;
 
-/*
- * TODO: Set up Footer content
- */
-
 const Footer = ({ showing }) => (
   <div
     style={{
