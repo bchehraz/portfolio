@@ -2,7 +2,6 @@ module.exports = {
   siteMetadata: {
     title: 'Portfolio Site',
   },
-  pathPrefix: '/portfolio',
   plugins: [
     {
       resolve: 'gatsby-plugin-typography',
