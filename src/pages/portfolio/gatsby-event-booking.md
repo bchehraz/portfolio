@@ -1,7 +1,7 @@
 ---
 path: "/portfolio/goal-trackr"
 date: "2019-09-03T06:59:16.775Z"
-title: "Event-Booking (Client)"
+title: "Gatsby Events (Client)"
 featuredImage: "./featured-image.jpg"
 tags: ["Mental Health", "Time Management"]
 ghLink: "http://github.com/bchehraz/gatsby-event-booking"

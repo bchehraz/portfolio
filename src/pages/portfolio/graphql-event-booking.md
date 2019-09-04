@@ -1,7 +1,7 @@
 ---
 path: "/portfolio/goal-trackr"
 date: "2019-09-03T06:59:16.775Z"
-title: "Event-Booking (Server)"
+title: "Gatsby Events (Server)"
 featuredImage: "./featured-image.jpg"
 tags: ["Mental Health", "Time Management"]
 ghLink: "http://github.com/bchehraz/graphql-event-booking"
@@ -26,27 +26,18 @@ type: "webApp"
 <ul>
 <li>
   (Client) GatsbyJS with React
-
-  [<a href="https://www.gatsbyjs.org">
-    https://www.gatsbyjs.org
-  </a>]
+  [<a href="https://www.gatsbyjs.org">https://www.gatsbyjs.org</a>]
   </li>
   <li>
   (Server) Powered by Heroku
-
-  [<a href="https://www.heroku.com/">
-    https://www.heroku.com/
-  </a>]
+  [<a href="https://www.heroku.com/">https://www.heroku.com/</a>]
   </li>
   <li>
     (API) GraphQL with NodeJS, Express
   </li>
   <li>
   (Database) MongoDB with Atlas
-
-  [<a href="https://www.mongodb.com/cloud/atlas">
-    https://www.mongodb.com/cloud/atlas
-  </a>]
+  [<a href="https://www.mongodb.com/cloud/atlas">https://www.mongodb.com/cloud/atlas</a>]
   </li>
 </ul>
 </section>
