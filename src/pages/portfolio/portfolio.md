@@ -25,7 +25,6 @@ type: "webApp"
   <li>Gatsby</li>
   <li>React</li>
   <li>GraphQL</li>
-  <li>PHP (backend)</li>
   <li>Atom</li>
   <li>JavaScript ES6</li>
 </ul>
@@ -35,13 +34,13 @@ type: "webApp"
 <ul>
   <li>
     Learn more about how Gatsby works at
-    <a href="https://www.gatsbyjs.org/" target="_blank">https://www.gatsbyjs.org/</a>
+    <a href="https://www.gatsbyjs.org/">https://www.gatsbyjs.org/</a>
   </li>
   <li>
     Inspired by...
     <ul>
-    <li>Rafael Caferati (<a href="https://caferati.me/" target="_blank">https://caferati.me/</a>)</li>
-    <li>Tania Rascia (<a href="https://www.taniarascia.com/" target="_blank">https://www.taniarascia.com/</a>)</li>
+    <li>Rafael Caferati (<a href="https://caferati.me/">https://caferati.me/</a>)</li>
+    <li>Tania Rascia (<a href="https://www.taniarascia.com/">https://www.taniarascia.com/</a>)</li>
     </ul>
   </li>
 </ul>

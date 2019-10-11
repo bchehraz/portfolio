@@ -1,5 +1,4 @@
 ---
-path: "/portfolio/goal-trackr"
 date: "2019-09-03T06:59:16.775Z"
 title: "Gatsby Events (Client)"
 featuredImage: "./featured-image.jpg"
@@ -7,7 +6,7 @@ tags: ["Mental Health", "Time Management"]
 ghLink: "http://github.com/bchehraz/gatsby-event-booking"
 demoLink: "https://gatsby-event-booking.netlify.com/"
 duration: "1 month"
-startDate: "August 2019"
+startDate: "September 2019"
 description: "Simple event-booking app made in React with Gatsby."
 type: "webApp"
 ---
