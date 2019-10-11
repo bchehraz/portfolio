@@ -29,7 +29,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       name: 'parentPath',
       value: parentPath,
     });
-    console.log("PATH: " + parentPath);
   }
 };
 
