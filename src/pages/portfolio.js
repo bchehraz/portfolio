@@ -21,7 +21,7 @@ const PortfolioPage = ({ data }) => {
     <Layout>
       <Container>
         <h1>Developer Portfolio</h1>
-        <h2>Check out my latest web software development portfolio projects</h2>
+        <h2>Check out my latest software development projects</h2>
       </Container>
       <ProjectsList projects={data.allMarkdownRemark.edges} />
     </Layout>
