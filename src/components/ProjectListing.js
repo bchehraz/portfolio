@@ -110,6 +110,13 @@ class ProjectListing extends React.Component {
     } = this.props;
 
     const { colorHEX, colorRGBA, randomValue } = this.state;
+
+    let subHeadingText = "";
+    if (type === "mobileApp") {
+      subHeadingText = "Mobile";
+    } else if (type === "webApp") {
+      subHeadingText = "Web";
+    }
     return (
       <ListingContainer colors={[ colorHEX, colorRGBA ]} randomValue={randomValue}>
         <Container>
@@ -118,7 +125,7 @@ class ProjectListing extends React.Component {
             <p>{description}</p>
           </HeaderContainer>
           <LinksContainer>
-            <Subheading>{(type === 'mobileApp') ? 'Mobile' : 'Web'}</Subheading>
+            <Subheading>{subHeadingText}</Subheading>
           </LinksContainer>
         </Container>
         <DateContainer>
