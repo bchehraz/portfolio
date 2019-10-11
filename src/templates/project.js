@@ -88,12 +88,11 @@ const Project = ({ data }) => {
     startDate,
     type,
     demoLink,
-    blogLink,
     ghLink,
     duration,
   } = project.frontmatter;
   const { slug } = project.fields;
-
+  const blogLink = null;
   return (
     <Layout>
       <Container>
@@ -186,7 +185,6 @@ export const query = graphql`
         startDate
         type
         demoLink
-        blogLink
         ghLink
         duration
       }
