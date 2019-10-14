@@ -145,7 +145,7 @@ class Contact extends React.Component {
     this.setState({
       formSuccess: true,
     });
-    Window.setTimeout(() => {
+    setTimeout(() => {
       this.setState({
         hideForm: true,
       })
@@ -259,11 +259,11 @@ class Contact extends React.Component {
               action={async (element, next) => {
                 let result = false;
                 result = await this.handleSubmit();
-                Window.setTimeout(() => {
+                setTimeout(() => {
                   next(result);
                 }, 200);
 
-                Window.setTimeout(() => {
+                setTimeout(() => {
                   if (result) this.hideForm();
                 }, 2000);
               }}

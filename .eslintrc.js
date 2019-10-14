@@ -22,5 +22,6 @@ module.exports = {
     "module": false,
     "Promise": false,
     "FormData": false,
+    "setTimeout": false,
   }
 };
