@@ -1,5 +1,4 @@
 ---
-path: "/portfolio/goal-trackr"
 date: "2019-05-25T19:12:33.962Z"
 title: "Portfolio Website"
 featuredImage: "./featured-image.jpg"
