@@ -28,11 +28,7 @@
     "react-typography": "^0.16.19",
     "styled-components": "^4.1.2",
     "typography": "^0.16.19",
-    "typography-theme-funston": "^0.16.19",
-    "typography-theme-grand-view": "^0.16.19",
-    "typography-theme-kirkham": "^0.16.19",
-    "typography-theme-moraga": "^0.16.19",
-    "typography-theme-stow-lake": "^0.16.19"
+    "typography-theme-alton": "^0.16.19"
   },
   "keywords": [
     "gatsby"
