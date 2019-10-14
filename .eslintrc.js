@@ -18,8 +18,9 @@ module.exports = {
     "fetch": false,
     "console": false,
     "exports": false,
-    "window": false,
+    "Window": false,
     "module": false,
-    "Promise": false
+    "Promise": false,
+    "FormData": false,
   }
 };
