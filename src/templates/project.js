@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import {
   AwesomeButton,
   AwesomeButtonSocial,
@@ -52,20 +53,6 @@ const LinkContainer = styled.div`
   }
 `;
 
-const DisqusContainer = styled.div`
-  height: 400px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  border: 5px dotted blue;
-`;
-
-const Disqus = styled.div`
-  border: 5px dotted green;
-  margin: 0 auto;
-`;
-
 const Content = styled.div`
   padding: 1em 0;
 `;
@@ -77,21 +64,14 @@ const ButtonSpan = styled.span`
 // Modify this image container when you decide to add the image component
 const ImageContainer = styled.div``;
 
-const WEB_URL = 'localhost:8000';
-
 const Project = ({ data }) => {
   const project = data.markdownRemark;
   const {
     title,
     description,
-    tags,
-    startDate,
-    type,
     demoLink,
     ghLink,
-    duration,
   } = project.frontmatter;
-  const { slug } = project.fields;
   const blogLink = null;
   return (
     <Layout>
@@ -171,6 +151,11 @@ const Project = ({ data }) => {
   </ButtonSpan>
 </div>
 */
+
+Project.propTypes = {
+  data: PropTypes.object.isRequired,
+  tags: PropTypes.array,
+}
 
 export default Project;
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import ProjectListing from './ProjectListing';
 
@@ -57,6 +58,11 @@ const ProjectsList = (props) => {
       })}
     </Container>
   );
+}
+
+ProjectsList.propTypes = {
+  projects: PropTypes.array.isRequired,
+  limit: PropTypes.number,
 }
 
 export default ProjectsList;

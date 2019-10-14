@@ -1,11 +1,9 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
-import {
-  AwesomeButton,
-  AwesomeButtonSocial,
-} from 'react-awesome-button';
+import PropTypes from 'prop-types';
+import { AwesomeButtonSocial } from 'react-awesome-button';
 import 'react-awesome-button/dist/themes/theme-blue.css';
 import Layout from '../components/layout';
 
@@ -30,20 +28,6 @@ const LinkContainer = styled.div`
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: baseline;
-`;
-
-const DisqusContainer = styled.div`
-  height: 400px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  border: 5px dotted blue;
-`;
-
-const Disqus = styled.div`
-  border: 5px dotted green;
-  margin: 0 auto;
 `;
 
 const Content = styled.div`
@@ -101,8 +85,8 @@ const Lab = ({ data }) => {
     title,
     date,
     type,
-    ghLink,
-    demoLink,
+  //  ghLink,
+  //  demoLink,
   } = project.frontmatter;
 
   const { slug } = project.fields;
@@ -165,11 +149,9 @@ const Lab = ({ data }) => {
   );
 };
 
-// <DisqusContainer>
-//   <Disqus>
-//     <h1>DISQUS Container</h1>
-//   </Disqus>
-// </DisqusContainer>
+Lab.propTypes = {
+  data: PropTypes.object.isRequired,
+}
 
 export default Lab;
 

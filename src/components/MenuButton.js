@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Burger = styled.div`
   display: flex;
@@ -73,5 +74,10 @@ const MenuButton = ({ isOpen, onMouseDown }) => (
     <MenuButtonText />
   </Container>
 );
+
+MenuButton.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onMouseDown: PropTypes.func.isRequired,
+}
 
 export default MenuButton;

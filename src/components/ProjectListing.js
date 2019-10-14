@@ -1,14 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
-/*
-  Determine the different types of projects you may have...
-  and for each one assign a different background color
-  Web app, back-end, front-end, mobile-app
-*/
-
-// Eventually its data will be retrieved with GraphQL and the Frontmatters in the .md files
 const Container = styled.div`
   display: flex;
   flex-direction: column-reverse;
@@ -135,6 +128,15 @@ class ProjectListing extends React.Component {
       </ListingContainer>
     );
   }
+}
+
+ProjectListing.propTypes = {
+  index: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  duration: PropTypes.string.isRequired,
+  startDate: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
 }
 
 export default ProjectListing;

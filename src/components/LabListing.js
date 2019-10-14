@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
 const ListingContainer = styled.div`
   display: flex;
@@ -40,13 +40,13 @@ const Container = styled.div`
   align-content: flex-end;
 `;
 
-const DateContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-  align-content: flex-end;
-`;
+// const DateContainer = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   align-items: flex-end;
+//   align-content: flex-end;
+// `;
 
 const Subheading = styled.p`
   margin: 0;
@@ -96,6 +96,13 @@ class LabListing extends React.Component {
       </ListingContainer>
     );
   }
+}
+
+LabListing.propTypes = {
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
 }
 
 export default LabListing;

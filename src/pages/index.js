@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { FaChevronDown } from 'react-icons/fa';
 
 import Layout from '../components/layout';
 import FloatingIcon from '../components/FloatingIcon';
-import LabListing from '../components/LabListing';
+// import LabListing from '../components/LabListing';
 import ProjectsList from '../components/ProjectsList';
 
 const HeadingContainer = styled.div`
@@ -52,34 +53,34 @@ const EmailText = styled.span`
   text-decoration: underline;
 `;
 
-const ProjectsContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-area: main;
-  grid-row-gap: 10px;
-  justify-content: start;
-  justify-items: stretch;
-  align-content: stretch;
-  justify-content: space-evenly;
-  align-items: stretch;
-  grid-auto-flow: row;
-  padding: 10px;
-  margin: 0 auto;
-
-  a {
-    text-decoration: none;
-  }
-
-  @media only screen and (min-width: 800px) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-  }
-
-  @media only screen and (min-width: 1300px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-`;
+// const ProjectsContainer = styled.div`
+//   display: grid;
+//   grid-template-columns: 1fr;
+//   grid-template-rows: auto;
+//   grid-area: main;
+//   grid-row-gap: 10px;
+//   justify-content: start;
+//   justify-items: stretch;
+//   align-content: stretch;
+//   justify-content: space-evenly;
+//   align-items: stretch;
+//   grid-auto-flow: row;
+//   padding: 10px;
+//   margin: 0 auto;
+//
+//   a {
+//     text-decoration: none;
+//   }
+//
+//   @media only screen and (min-width: 800px) {
+//     grid-template-columns: repeat(2, 1fr);
+//     grid-gap: 10px;
+//   }
+//
+//   @media only screen and (min-width: 1300px) {
+//     grid-template-columns: repeat(3, 1fr);
+//   }
+// `;
 
 const ProjectsHeaderContainer = styled.div`
   padding: 1.5em;
@@ -89,39 +90,39 @@ const ProjectsHeaderContainer = styled.div`
   align-items: flex-end;
 `;
 
-const LabsContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-area: main;
-  grid-gap: 10px;
-  justify-content: start;
-  justify-items: stretch;
-  align-content: stretch;
-  grid-auto-flow: row;
-  padding: 10px;
-  margin: 0;
-
-  a {
-    text-decoration: none;
-  }
-
-  @media only screen and (min-width: 800px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media only screen and (min-width: 1300px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-`;
-
-const LabsHeaderContainer = styled.div`
-  padding: 1.5em;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-`;
+// const LabsContainer = styled.div`
+//   display: grid;
+//   grid-template-columns: 1fr;
+//   grid-template-rows: auto;
+//   grid-area: main;
+//   grid-gap: 10px;
+//   justify-content: start;
+//   justify-items: stretch;
+//   align-content: stretch;
+//   grid-auto-flow: row;
+//   padding: 10px;
+//   margin: 0;
+//
+//   a {
+//     text-decoration: none;
+//   }
+//
+//   @media only screen and (min-width: 800px) {
+//     grid-template-columns: repeat(2, 1fr);
+//   }
+//
+//   @media only screen and (min-width: 1300px) {
+//     grid-template-columns: repeat(3, 1fr);
+//   }
+// `;
+//
+// const LabsHeaderContainer = styled.div`
+//   padding: 1.5em;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   align-items: flex-end;
+// `;
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -160,7 +161,7 @@ class IndexPage extends React.Component {
     const { data } = this.props;
 
     const projects = (data.allMarkdownRemark.group[0].fieldValue === '/portfolio/') ? data.allMarkdownRemark.group[0].edges : data.allMarkdownRemark.group[1].edges;
-    const labs = (data.allMarkdownRemark.group[0].fieldValue === '/labs/') ? data.allMarkdownRemark.group[0].edges : data.allMarkdownRemark.group[1].edges;
+    // const labs = (data.allMarkdownRemark.group[0].fieldValue === '/labs/') ? data.allMarkdownRemark.group[0].edges : data.allMarkdownRemark.group[1].edges;
 
     return (
       <Layout>
@@ -207,6 +208,10 @@ class IndexPage extends React.Component {
       </Layout>
     );
   }
+}
+
+IndexPage.propTypes = {
+  data: PropTypes.object.isRequired,
 }
 
 export default IndexPage;

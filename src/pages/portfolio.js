@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Layout from '../components/layout';
-import ProjectListing from '../components/ProjectListing';
 import ProjectsList from '../components/ProjectsList';
 
 const Container = styled.div`
@@ -27,6 +27,10 @@ const PortfolioPage = ({ data }) => {
     </Layout>
   );
 };
+
+PortfolioPage.propTypes = {
+  data: PropTypes.object.isRequired,
+}
 
 export default PortfolioPage;
 

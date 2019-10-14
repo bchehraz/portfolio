@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Layout from '../components/layout';
 import LabListing from '../components/LabListing';
@@ -66,6 +67,10 @@ const LabsPage = ({ data }) => {
     </Layout>
   );
 };
+
+LabsPage.propTypes = {
+  data: PropTypes.object.isRequired,
+}
 
 export default LabsPage;
 

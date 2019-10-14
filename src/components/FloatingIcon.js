@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Container = styled.div`
   animation: animationFrames ease-in-out 1s;
@@ -85,5 +86,9 @@ const FloatingIcon = ({ children }) => (
     {children}
   </Container>
 );
+
+FloatingIcon.propTypes = {
+  children: PropTypes.object.isRequired,
+}
 
 export default FloatingIcon;
