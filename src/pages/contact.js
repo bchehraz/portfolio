@@ -26,10 +26,12 @@ const ContactPage = () => (
     <Container>
       <h1>Get in touch</h1>
       <p>
-        {'If you wanna get in touch, talk to me about a project collaboration or just say hi, send an email to '}
+        {'If you wanna get in touch, talk to me about a project collaboration or just say hi, please fill out the form below, or send an email to '}
           <a href="mailto:babak.chehraz@gmail.com">babak.chehraz@gmail.com</a>
          {' and let\'s talk.'}
       </p>
+
+      <Contact />
 
       <h2>{'Let\'s get social'}</h2>
       <p>Follow my online fan page on Facebook and profiles on Twitter, GitHub and Linkedin.</p>

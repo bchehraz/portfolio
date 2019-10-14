@@ -141,14 +141,24 @@ class Contact extends React.Component {
     });
   }
 
-  async handleSubmit() {
+  hideForm() {
+    this.setState({
+      formSuccess: true,
+    });
+    Window.setTimeout(() => {
+      this.setState({
+        hideForm: true,
+      })
+    }, 750);
+  }
+
+  handleSubmit = async () => {
     const { name, email, message } = this.state;
-    const bodyFormData = new FormData();
-    let result = false;
+    let bodyFormData = new FormData();
 
     if (name.length <= 0) {
       this.setState({ resultLabel: 'Error :( please enter your name' });
-      return false;
+      return await false;
     } else if (!this.validateEmail()) {
       this.setState({ resultLabel: 'Error :( please enter a valid email!' });
       return await false;
@@ -156,62 +166,37 @@ class Contact extends React.Component {
       this.setState({ resultLabel: 'Error :( message length is too short' });
       return await false;
     }
-    bodyFormData.set('name', name);
+
+    bodyFormData.set('name', name)
     bodyFormData.set('email', email);
     bodyFormData.set('message', message);
-    bodyFormData.set('submit', true);
 
-    const response = await Axios({
-      method: 'post',
-      url: '/email/',
-      baseURL: 'https://babak-chehraz-portfolio.herokuapp.com',
-      data: bodyFormData,
-      config: {
+    try {
+      const result = await Axios({
+        method: 'post',
+        url: '/send-email',
+        baseURL: 'https://babak-portfolio-smtp.herokuapp.com',
+        data: {
+          email,
+          name,
+          message
+        },
         headers: {
-          'Content-Type': 'multipart/form-data',
-      },
-    }
-    }).then(function (response) {
-      //handle success
-      result = true;
-      return true;
-    }).catch(function (error) {
-      if (error.response) {
-        // The request was made and the server responded with a status code
-        // that falls out of the range of 2xx
-        console.log('Error.response.data => ', error.response.data);
-        console.log('Error.response.status => ', error.response.status);
-        console.log('Error.response.headers => ', error.response.headers);
-      } else if (error.request) {
-        // The request was made but no response was received
-        // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-        // http.ClientRequest in node.js
-        console.log('Error.request => ', error.request);
-      } else {
-        // Something happened in setting up the request that triggered an Error
-        console.log('Error =>', error.message);
-      }
-      console.log('Error.config =>', error.config);
-      return false;
-    });
-
-    if (result) {
-      this.setState({
-        resultLabel: 'Message Sent Successfully :)',
+          'Content-Type': 'application/json',
+        }
       });
-      return true;
-    }
-  }
 
-  hideForm() {
-    this.setState({
-      formSuccess: true,
-    });
-    setTimeout(() => {
-      this.setState({
-        hideForm: true,
-      })
-    }, 750);
+      if (result.data.success) {
+        this.setState({
+          resultLabel: 'Message Sent :)',
+        });
+        return true;
+      } else {
+        throw new Error('An error occurred.');
+      }
+    } catch (err) {
+      return false;
+    }
   }
 
   render() {
@@ -221,7 +206,6 @@ class Contact extends React.Component {
       message,
       emailValid,
       resultLabel,
-      success,
       formSuccess,
       hideForm,
     } = this.state;
@@ -274,13 +258,12 @@ class Contact extends React.Component {
               style={{ width: '100%' }}
               action={async (element, next) => {
                 let result = false;
-                await this.handleSubmit().then((response) => result = response);
-
-                setTimeout(() => {
+                result = await this.handleSubmit();
+                Window.setTimeout(() => {
                   next(result);
                 }, 200);
 
-                setTimeout(() => {
+                Window.setTimeout(() => {
                   if (result) this.hideForm();
                 }, 2000);
               }}
