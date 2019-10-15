@@ -62,9 +62,8 @@ const Content = styled.div`
 `;
 
 const ButtonSpan = styled.span`
-  padding-right: 5px;
-  width: 200px;
-  min-width: 200px;
+  padding-right: 1em;
+  width: calc(100vw - 30px);
   max-width: 400px;
 
   .aws-btn,
