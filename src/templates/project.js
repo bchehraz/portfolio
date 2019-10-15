@@ -37,6 +37,9 @@ const LinkContainer = styled.div`
   div:first-child {
     display: flex;
     flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
   }
 
   @media only screen and (min-width: 650px) {
@@ -49,6 +52,7 @@ const LinkContainer = styled.div`
   @media only screen and (min-width: 500px) {
     div:first-child {
       flex-flow: row nowrap;
+      margin: 0;
     }
   }
 `;
@@ -59,6 +63,22 @@ const Content = styled.div`
 
 const ButtonSpan = styled.span`
   padding-right: 5px;
+  width: 200px;
+  min-width: 200px;
+  max-width: 400px;
+
+  .aws-btn,
+  .aws-btn-wrapper {
+    min-width: 100%;
+    max-width: 100vw;
+  }
+
+  @media only screen and (min-width: 500px) {
+    width: auto;
+    min-width: auto;
+    max-width: auto;
+    margin: auto;
+  }
 `;
 
 // Modify this image container when you decide to add the image component
