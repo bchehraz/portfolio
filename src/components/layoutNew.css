@@ -4,3 +4,8 @@ a {
   -webkit-text-decoration-skip: objects;
   color: black;
 }
+
+p a,
+ul li a {
+  text-decoration: underline;
+}
