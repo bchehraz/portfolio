@@ -77,6 +77,7 @@ const ButtonSpan = styled.span`
     min-width: auto;
     max-width: auto;
     margin: auto;
+    padding-right: 5px;
   }
 `;
 

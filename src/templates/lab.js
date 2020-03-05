@@ -173,13 +173,13 @@ export const query = graphql`
         slug
       }
     }
-
-    authorPicture: file(relativePath: { eq: "author.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 500, maxHeight: 500) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
   }
 `;
+
+// authorPicture: file(relativePath: { eq: "author.jpg" }) {
+//   childImageSharp {
+//     fluid(maxWidth: 500, maxHeight: 500) {
+//       ...GatsbyImageSharpFluid
+//     }
+//   }
+// }

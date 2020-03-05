@@ -76,16 +76,16 @@ MePage.propTypes = {
 
 */
 
-export const query = graphql`
-  query {
-    aboutPicture: file(relativePath: { eq: "me.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 500, maxHeight: 500) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query {
+//     aboutPicture: file(relativePath: { eq: "me.jpg" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 500, maxHeight: 500) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//   }
+// `;
 
 export default MePage;
