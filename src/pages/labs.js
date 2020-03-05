@@ -44,28 +44,30 @@ const LabsContainer = styled.div`
 `;
 
 const LabsPage = ({ data }) => {
-  const labs = data.allMarkdownRemark.edges;
+  // const labs = data.allMarkdownRemark.edges;
 
-  return (
-    <Layout>
-      <Container>
-        <h1>Code Laboratory</h1>
-        <h2>ReactJS Components, Articles, and anything else accomplished on my spare time.</h2>
-      </Container>
-      <LabsContainer>
-        {labs.map(({ node }, index) => (
-          <Link to={node.fields.slug} key={node.id}>
-            <LabListing
-              title={node.frontmatter.title}
-              date={node.frontmatter.date}
-              type={node.frontmatter.type}
-              index={index}
-            />
-          </Link>
-        ))}
-      </LabsContainer>
-    </Layout>
-  );
+  return <div />
+
+  // return (
+  //   <Layout>
+  //     <Container>
+  //       <h1>Code Laboratory</h1>
+  //       <h2>ReactJS Components, Articles, and anything else accomplished on my spare time.</h2>
+  //     </Container>
+  //     <LabsContainer>
+  //       {labs.map(({ node }, index) => (
+  //         <Link to={node.fields.slug} key={node.id}>
+  //           <LabListing
+  //             title={node.frontmatter.title}
+  //             date={node.frontmatter.date}
+  //             type={node.frontmatter.type}
+  //             index={index}
+  //           />
+  //         </Link>
+  //       ))}
+  //     </LabsContainer>
+  //   </Layout>
+  // );
 };
 
 LabsPage.propTypes = {
@@ -74,26 +76,26 @@ LabsPage.propTypes = {
 
 export default LabsPage;
 
-export const query = graphql`
-  query {
-    allMarkdownRemark (
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { slug: { regex: "/^\/labs/" }}}
-    ) {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(fromNow: true)
-            type
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query {
+//     allMarkdownRemark (
+//       sort: { fields: [frontmatter___date], order: DESC }
+//       filter: { fields: { slug: { regex: "/^\/labs/" }}}
+//     ) {
+//       totalCount
+//       edges {
+//         node {
+//           id
+//           frontmatter {
+//             title
+//             date(fromNow: true)
+//             type
+//           }
+//           fields {
+//             slug
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;

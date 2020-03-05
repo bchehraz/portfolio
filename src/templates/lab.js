@@ -155,26 +155,26 @@ Lab.propTypes = {
 
 export default Lab;
 
-export const query = graphql`
-  query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title
-        date(fromNow: true)
-        type
-        featuredImage
-        tags
-        ghLink
-        demoLink
-        path
-      }
-      fields {
-        slug
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query($slug: String!) {
+//     markdownRemark(fields: { slug: { eq: $slug } }) {
+//       html
+//       frontmatter {
+//         title
+//         date(fromNow: true)
+//         type
+//         featuredImage
+//         tags
+//         ghLink
+//         demoLink
+//         path
+//       }
+//       fields {
+//         slug
+//       }
+//     }
+//   }
+// `;
 
 // authorPicture: file(relativePath: { eq: "author.jpg" }) {
 //   childImageSharp {
