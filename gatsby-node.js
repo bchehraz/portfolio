@@ -56,15 +56,16 @@ exports.createPages = ({ graphql, actions }) => {
             slug: node.fields.slug,
           },
         });
-      } else {
-        createPage({
-          path: node.fields.slug,
-          component: path.resolve('./src/templates/lab.js'),
-          context: {
-            slug: node.fields.slug,
-          },
-        });
       }
+      // } else {
+      //   createPage({
+      //     path: node.fields.slug,
+      //     component: path.resolve('./src/templates/lab.js'),
+      //     context: {
+      //       slug: node.fields.slug,
+      //     },
+      //   });
+      // }
     });
   });
 };
