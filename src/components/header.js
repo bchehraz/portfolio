@@ -79,7 +79,7 @@ const HeadingContainer = styled.div`
 `;
 
 const Name = 'Babak Chehraz';
-const JobName = 'Software Developer';
+const JobName = 'Software Engineer';
 
 const Header = () => (
   <Container>

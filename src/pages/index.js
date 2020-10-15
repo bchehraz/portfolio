@@ -167,8 +167,8 @@ class IndexPage extends React.Component {
       <Layout>
         <HeadingContainer>
           <div>
-            <h1>{'Hi, I\'m a Software Developer from Fresno, California.'}</h1>
-            <h1>I can help you build your next website.</h1>
+            <h1>{'Hi, I\'m a Software Engineer from Fresno, California.'}</h1>
+            <h1>I can help you build your next web product.</h1>
             <h2>I design and build responsive full-stack web applications</h2>
             <h2>
               {'Have a project you\'d like to discuss? '}

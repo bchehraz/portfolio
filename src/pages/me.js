@@ -23,13 +23,13 @@ const MePage = () => {
         <h1>About me</h1>
         <h3>On the Surface</h3>
         <p>
-          {"Hi, I'm Babak Chehraz, a Software Developer based in Fresno, California. "}
+          {"Hi, I'm Babak Chehraz, a Software Engineer based in Fresno, California. "}
           {"I graduated from CSU Monterey Bay in 2017 with a B.S. in Computer Science. At this time I am seeking full-time opportunities in California!"}
           {" "}
         </p>
-        <p>
+        {/* <p>
           My goal with this website is to show my personal and professional coding experience, as well as <Link to="/learning"><b>{"what I'm learning"}</b></Link> and <Link to="/links"><b>Links to Useful Sites</b></Link>.
-        </p>
+        </p> */}
         <h3>Personal Life</h3>
         <p>{"I love being out in nature. I try to visit Yosemite every chance I get. Hiking and kayaking are where I am at peace. If I'm not exploring, I'll either be coding, reading, listening to podcasts, or practicing guitar. You might catch me at the local coffee shop working on a project!"}
         {""}</p>

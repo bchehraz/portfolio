@@ -2,18 +2,19 @@
 date: "2020-01-15T19:12:33.962Z"
 title: "Blinkwing"
 demoLink: "https://blinkwingdev.netlify.com"
-duration: "Ongoing"
+ghLink: "https://github.com/zacharynoel/blinkwing"
+duration: "2 Months"
 startDate: "January 2020"
-description: "Software Agency Website"
+description: "Software Agency Site"
 type: "webApp"
 ---
 <section>
 <h2>About this project</h2>
 <p>
-  This website is the developmental homepage for a new upcoming Software startup, Blinkwing. Based in Fresno, CA, this startup is trying to change the game in the web development world to provide businesses with powerful and mobile friendly sites using Gatsby and React. 
+  Software Development Agency example website to demonstrate the ability to create a consumer-facing website using React with Gatsby and Netlify hosting/tools.
 </p>
 <p>
-  Founded and Co-Owned by Babak Chehraz (myself) & Zachary Noel
+  Authors: Babak Chehraz & Zachary Noel
 </p>
 </section>
 <section>
@@ -25,8 +26,7 @@ type: "webApp"
       <li>Gatsby</li>
       <li>React</li>
       <li>GraphQL</li>
-      <li>Netlify</li>
-      <li>Netlify CMS</li>
+      <li>Netlify Hosting & CMS</li>
     </ul>
   </li>
 
@@ -50,8 +50,16 @@ type: "webApp"
 <h2>Resources</h2>
 <ul>
   <li>
-    Learn more about Netlify
+    Learn About Netlify
     <a href="https://www.netlify.com/">https://www.netlify.com/</a>
+  </li>
+  <li>
+    Learn About Gatsby
+    <a href="https://www.gatsbyjs.org/">https://www.gatsbyjs.org/</a>
+  </li>
+  <li>
+    Figma is a free UI/UX Design Tool for high fidelity mockups
+    <a href="https://www.figma.com/">https://www.figma.com//</a>
   </li>
 </ul>
 </section>
