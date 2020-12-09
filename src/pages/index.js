@@ -1,13 +1,13 @@
-import React from 'react';
-import { Link, graphql } from 'gatsby';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { FaChevronDown } from 'react-icons/fa';
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import styled from 'styled-components'
+import PropTypes from 'prop-types'
+import { FaChevronDown } from 'react-icons/fa'
 
-import Layout from '../components/layout';
-import FloatingIcon from '../components/FloatingIcon';
+import Layout from '../components/layout'
+import FloatingIcon from '../components/FloatingIcon'
 // import LabListing from '../components/LabListing';
-import ProjectsList from '../components/ProjectsList';
+import ProjectsList from '../components/ProjectsList'
 
 const HeadingContainer = styled.div`
   display: flex;
@@ -42,16 +42,17 @@ const HeadingContainer = styled.div`
     h1 {
       font-size: 1.7em;
     }
-    h2, p {
+    h2,
+    p {
       font-size: 1.3em;
     }
   }
-`;
+`
 
 const EmailText = styled.span`
   color: #0099ff;
   text-decoration: underline;
-`;
+`
 
 // const ProjectsContainer = styled.div`
 //   display: grid;
@@ -88,7 +89,7 @@ const ProjectsHeaderContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-`;
+`
 
 // const LabsContainer = styled.div`
 //   display: grid;
@@ -126,53 +127,56 @@ const ProjectsHeaderContainer = styled.div`
 
 class IndexPage extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       projectCount: 0,
       labCount: 0,
     }
 
-    this.projectsRef = React.createRef();
-    this.scroll = this.scroll.bind(this);
-    this.getProjectCount = this.getProjectCount.bind(this);
+    this.projectsRef = React.createRef()
+    this.scroll = this.scroll.bind(this)
+    this.getProjectCount = this.getProjectCount.bind(this)
   }
 
   scroll(ref) {
-    ref.current.scrollIntoView({ behavior: 'smooth' });
+    ref.current.scrollIntoView({ behavior: 'smooth' })
   }
 
   getProjectCount() {
     this.setState(prevState => ({
       projectCount: prevState.projectCount + 1,
-    }));
-    return 0;
+    }))
+    return 0
   }
 
   getLabCount() {
-    const { labCount } = this.state;
+    const { labCount } = this.state
     this.setState({
       labCount: labCount + 1,
-    });
-    return labCount;
+    })
+    return labCount
   }
 
   render() {
-    const { data } = this.props;
+    const { data } = this.props
 
-    const projects = (data.allMarkdownRemark.group[0].fieldValue === '/portfolio/') ? data.allMarkdownRemark.group[0].edges : data.allMarkdownRemark.group[1].edges;
+    const projects =
+      data.allMarkdownRemark.group[0].fieldValue === '/portfolio/'
+        ? data.allMarkdownRemark.group[0].edges
+        : data.allMarkdownRemark.group[1].edges
     // const labs = (data.allMarkdownRemark.group[0].fieldValue === '/labs/') ? data.allMarkdownRemark.group[0].edges : data.allMarkdownRemark.group[1].edges;
 
     return (
       <Layout>
         <HeadingContainer>
           <div>
-            <h1>{'Hi, I\'m a Software Engineer from Fresno, California.'}</h1>
+            <h1>{"Hi, I'm a Fullstack Developer from Fresno, California."}</h1>
             <h1>I can help you build your next web product.</h1>
             <h2>I design and build responsive full-stack web applications</h2>
             <h2>
-              {'Have a project you\'d like to discuss? '}
-              {'Let\'s chat! '}
+              {"Have a project you'd like to discuss? "}
+              {"Let's chat! "}
               <a href="mailto:babak.chehraz@gmail.com">
                 <EmailText>babak.chehraz@gmail.com</EmailText>
               </a>
@@ -190,23 +194,25 @@ class IndexPage extends React.Component {
             </FloatingIcon>
           </div>
         </HeadingContainer>
-        {
-        /*
+        {/*
           <Skills />
           <HireMe />
 
           ProjectsContainer below
-        */
-        }
+        */}
         <div>
           <ProjectsHeaderContainer ref={this.projectsRef}>
-            <h2><span id="projects">Recent Projects</span></h2>
-            <h3><Link to="/portfolio">See All</Link></h3>
+            <h2>
+              <span id="projects">Recent Projects</span>
+            </h2>
+            <h3>
+              <Link to="/portfolio">See All</Link>
+            </h3>
           </ProjectsHeaderContainer>
-          <ProjectsList projects={projects} limit={6}/>
+          <ProjectsList projects={projects} limit={6} />
         </div>
       </Layout>
-    );
+    )
   }
 }
 
@@ -214,7 +220,7 @@ IndexPage.propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-export default IndexPage;
+export default IndexPage
 
 /* for having labs
 <div>
@@ -239,9 +245,7 @@ export default IndexPage;
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       group(field: fields___parentPath) {
         fieldValue
@@ -264,4 +268,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`
