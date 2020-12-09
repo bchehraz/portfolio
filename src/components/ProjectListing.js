@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import React from 'react'
+import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const Container = styled.div`
   display: flex;
@@ -11,10 +11,9 @@ const Container = styled.div`
   @media only screen and (min-width: 600px) {
     flex-direction: row;
   }
-`;
+`
 
-const HeaderContainer = styled.div`
-`;
+const HeaderContainer = styled.div``
 
 const DateContainer = styled.div`
   display: flex;
@@ -22,14 +21,14 @@ const DateContainer = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   align-content: flex-end;
-`;
+`
 
 const LinksContainer = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
   white-space: nowrap;
-`;
+`
 
 const ListingContainer = styled.div`
   display: flex;
@@ -38,7 +37,7 @@ const ListingContainer = styled.div`
   padding: 2em 1em;
   border: 3px solid white;
   border-radius: 0;
-  background-color: rgba(3,3,3,0.3);
+  background-color: rgba(3, 3, 3, 0.3);
   background-color: ${props => props.colors[1]};
   max-width: 100vw;
   min-height: 300px;
@@ -60,19 +59,19 @@ const ListingContainer = styled.div`
   h1 {
     font-size: 2em;
   }
-`;
+`
 
 const Subheading = styled.p`
   margin: 0;
   padding: 0;
-`;
+`
 
 class ProjectListing extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    let randomValue = 0;
-    const newIndex = props.index % 8;
+    let randomValue = 0
+    const newIndex = props.index % 8
 
     // if (Math.floor(props.index / 8) % 2 === 0) {
     //   randomValue = Math.floor(Math.random() * 16) + 128 + (16 * (newIndex));
@@ -81,37 +80,36 @@ class ProjectListing extends React.Component {
     // }
 
     if (Math.floor(props.index / 8) % 2 === 0) {
-      randomValue = Math.floor(Math.random() * 16) + 128 + (16 * (7 - newIndex));
+      randomValue = Math.floor(Math.random() * 16) + 128 + 16 * (7 - newIndex)
     } else {
-      randomValue = Math.floor(Math.random() * 16) + 128 + (16 * (newIndex));
+      randomValue = Math.floor(Math.random() * 16) + 128 + 16 * newIndex
     }
 
     this.state = {
       colorHEX: `#00${randomValue.toString(16)}ff`,
       colorRGBA: `rgba(0, ${randomValue}, 255, 0.5)`,
       randomValue: randomValue,
-    };
+    }
   }
 
   render() {
-    const {
-      title,
-      duration,
-      startDate,
-      description,
-      type,
-    } = this.props;
+    const { title, duration, startDate, description, type } = this.props
 
-    const { colorHEX, colorRGBA, randomValue } = this.state;
+    const { colorHEX, colorRGBA, randomValue } = this.state
 
-    let subHeadingText = "";
-    if (type === "mobileApp") {
-      subHeadingText = "Mobile";
-    } else if (type === "webApp") {
-      subHeadingText = "Web";
+    let subHeadingText = ''
+    if (type === 'mobileApp') {
+      subHeadingText = 'Mobile'
+    } else if (type === 'webApp') {
+      subHeadingText = 'Web'
+    } else if (type === 'node') {
+      subHeadingText = 'NodeJS'
     }
     return (
-      <ListingContainer colors={[ colorHEX, colorRGBA ]} randomValue={randomValue}>
+      <ListingContainer
+        colors={[colorHEX, colorRGBA]}
+        randomValue={randomValue}
+      >
         <Container>
           <HeaderContainer>
             <h1>{title}</h1>
@@ -126,7 +124,7 @@ class ProjectListing extends React.Component {
           <Subheading>{duration}</Subheading>
         </DateContainer>
       </ListingContainer>
-    );
+    )
   }
 }
 
@@ -139,4 +137,4 @@ ProjectListing.propTypes = {
   type: PropTypes.string.isRequired,
 }
 
-export default ProjectListing;
+export default ProjectListing
