@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import styled from 'styled-components';
+import React from 'react'
+import { Link } from 'gatsby'
+import styled from 'styled-components'
 
-import Menu from './menu';
+import Menu from './menu'
 
 const NameHeading = styled.h1`
   color: black;
@@ -11,16 +11,16 @@ const NameHeading = styled.h1`
   font-size: 1.7em;
   white-space: nowrap;
   margin: 0;
-`;
+`
 
 const SubHeading = styled.h1`
   color: rgba(0, 0, 0, 0.4);
   padding: 0;
   line-height: 1em;
-  font-size: 1.30em;
+  font-size: 1.3em;
   white-space: nowrap;
   margin: 0;
-`;
+`
 
 /*
 style={{
@@ -68,7 +68,7 @@ const Container = styled.div`
   @media only screen and (min-width: 1000px) {
     max-width: 100%;
   }
-`;
+`
 
 const HeadingContainer = styled.div`
   display: flex;
@@ -76,10 +76,10 @@ const HeadingContainer = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   padding: 0 0;
-`;
+`
 
-const Name = 'Babak Chehraz';
-const JobName = 'Software Engineer';
+const Name = 'Babak Chehraz'
+const JobName = 'Fullstack Developer'
 
 const Header = () => (
   <Container>
@@ -97,6 +97,6 @@ const Header = () => (
     </HeadingContainer>
     <Menu />
   </Container>
-);
+)
 
-export default Header;
+export default Header
