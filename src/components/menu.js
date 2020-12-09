@@ -1,11 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'gatsby';
+import React from 'react'
+import styled from 'styled-components'
+import { Link } from 'gatsby'
 
-import MenuButton from './MenuButton';
+import MenuButton from './MenuButton'
 
-const Container = styled.div`
-`;
+const Container = styled.div``
 
 const MenuOuterContainer = styled.div`
   position: absolute;
@@ -48,44 +47,48 @@ const MenuOuterContainer = styled.div`
     -o-transition: all 200ms ease-in-out;
     transition: all 200ms ease-in-out;
   }
-`;
+`
 
 class Menu extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       isOpen: false,
-    };
+    }
 
-    this.toggleMenu = this.toggleMenu.bind(this);
-    this.closeMenu = this.closeMenu.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this)
+    this.closeMenu = this.closeMenu.bind(this)
   }
 
   toggleMenu(e) {
-    e.preventDefault();
-    const { isOpen } = this.state;
-    this.setState({ isOpen: !isOpen });
+    e.preventDefault()
+    const { isOpen } = this.state
+    this.setState({ isOpen: !isOpen })
   }
 
   closeMenu(e) {
-    e.preventDefault();
-    this.setState({ isOpen: false });
+    e.preventDefault()
+    this.setState({ isOpen: false })
   }
 
   render() {
-    const { isOpen } = this.state;
+    const { isOpen } = this.state
     return (
       <Container>
         <MenuButton isOpen={isOpen} onMouseDown={this.toggleMenu} />
         <MenuOuterContainer isOpen={isOpen} onMouseDown={this.closeMenu}>
-          <Link to="/me"><h2>Me</h2></Link>
-          <Link to="/portfolio"><h2>Portfolio</h2></Link>
-          <Link to="/contact"><h2>Contact Me</h2></Link>
+          {/* <Link to="/me"><h2>Me</h2></Link> */}
+          <Link to="/portfolio">
+            <h2>Portfolio</h2>
+          </Link>
+          <Link to="/contact">
+            <h2>Contact Me</h2>
+          </Link>
         </MenuOuterContainer>
       </Container>
-    );
+    )
   }
 }
 
-export default Menu;
+export default Menu
