@@ -1,13 +1,10 @@
-import React from 'react';
-import { Link, graphql } from 'gatsby';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import {
-  AwesomeButton,
-  AwesomeButtonSocial,
-} from 'react-awesome-button';
-import 'react-awesome-button/dist/themes/theme-blue.css';
-import Layout from '../components/layout';
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import styled from 'styled-components'
+import PropTypes from 'prop-types'
+import { AwesomeButton, AwesomeButtonSocial } from 'react-awesome-button'
+import 'react-awesome-button/dist/themes/theme-blue.css'
+import Layout from '../components/layout'
 
 const Container = styled.div`
   padding: 1em 1em;
@@ -21,7 +18,7 @@ const Container = styled.div`
   @media only screen and (min-width: 800px) {
     padding: 1em 2em;
   }
-`;
+`
 
 const LinkContainer = styled.div`
   width: 100%;
@@ -55,11 +52,11 @@ const LinkContainer = styled.div`
       margin: 0;
     }
   }
-`;
+`
 
 const Content = styled.div`
   padding: 1em 0;
-`;
+`
 
 const ButtonSpan = styled.span`
   padding-right: 1em;
@@ -79,20 +76,15 @@ const ButtonSpan = styled.span`
     margin: auto;
     padding-right: 5px;
   }
-`;
+`
 
 // Modify this image container when you decide to add the image component
-const ImageContainer = styled.div``;
+const ImageContainer = styled.div``
 
 const Project = ({ data }) => {
-  const project = data.markdownRemark;
-  const {
-    title,
-    description,
-    demoLink,
-    ghLink,
-  } = project.frontmatter;
-  const blogLink = null;
+  const project = data.markdownRemark
+  const { title, description, demoLink, ghLink } = project.frontmatter
+  const blogLink = null
   return (
     <Layout>
       <Container>
@@ -100,30 +92,23 @@ const Project = ({ data }) => {
         <h2>{description}</h2>
         <LinkContainer>
           <div>
-            {(demoLink) && (
+            {demoLink && demoLink !== '' && (
               <ButtonSpan>
-                <AwesomeButton
-                  ripple
-                  href={demoLink}
-                  target="_blank"
-                >
+                <AwesomeButton ripple href={demoLink} target="_blank">
                   Demo
                 </AwesomeButton>
               </ButtonSpan>
             )}
-            {(blogLink) && (
+            {blogLink && blogLink !== '' && (
               <Link to={blogLink}>
                 <ButtonSpan>
-                  <AwesomeButton
-                    type="secondary"
-                    ripple
-                  >
+                  <AwesomeButton type="secondary" ripple>
                     View Article
                   </AwesomeButton>
                 </ButtonSpan>
               </Link>
             )}
-            {(ghLink) && (
+            {ghLink && ghLink !== '' && (
               <ButtonSpan>
                 <AwesomeButtonSocial
                   type="github"
@@ -138,13 +123,11 @@ const Project = ({ data }) => {
           </div>
         </LinkContainer>
         <ImageContainer />
-        <Content
-          dangerouslySetInnerHTML={{ __html: project.html }}
-        />
+        <Content dangerouslySetInnerHTML={{ __html: project.html }} />
       </Container>
     </Layout>
-  );
-};
+  )
+}
 
 /* SOCIAL SHARE BUTTONS
 <div>
@@ -177,7 +160,7 @@ Project.propTypes = {
   tags: PropTypes.array,
 }
 
-export default Project;
+export default Project
 
 export const query = graphql`
   query($slug: String!) {
@@ -198,4 +181,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`
