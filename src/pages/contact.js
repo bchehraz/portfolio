@@ -1,10 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import {
-  AwesomeButtonSocial,
-} from 'react-awesome-button';
-import Layout from '../components/layout';
-import Contact from '../components/Contact';
+import React from 'react'
+import styled from 'styled-components'
+import { AwesomeButtonSocial } from 'react-awesome-button'
+import Layout from '../components/layout'
+import Contact from '../components/Contact'
 
 const Container = styled.div`
   display: flex;
@@ -14,27 +12,34 @@ const Container = styled.div`
   padding: 2em;
   max-width: 600px;
   margin: 0 auto;
-`;
+`
 
 const ButtonContainer = styled.div`
   padding: 0.5rem;
   white-space: nowrap;
-`;
+`
 
 const ContactPage = () => (
   <Layout showFooter={false}>
     <Container>
       <h1>Get in touch</h1>
       <p>
-        {'If you wanna get in touch, talk to me about a project collaboration or just say hi, please fill out the form below, or send an email to '}
-          <a href="mailto:babak.chehraz@gmail.com">babak.chehraz@gmail.com</a>
-         {' and let\'s talk.'}
+        {
+          'If you wanna get in touch, talk to me about a project collaboration or just say hi, please send me an email at '
+        }
+        <a href="mailto:babak.chehraz@gmail.com">babak.chehraz@gmail.com</a>
+        {" and let's talk."}
       </p>
 
-      <Contact />
+      {/* <Contact /> */}
+      <br />
+      <br />
 
-      <h2>{'Let\'s get social'}</h2>
-      <p>Follow my online fan page on Facebook and profiles on Twitter, GitHub and Linkedin.</p>
+      <h2>{"Let's get social"}</h2>
+      <p>
+        Follow my online fan page on Facebook and profiles on Twitter, GitHub
+        and Linkedin.
+      </p>
       <div>
         <ButtonContainer>
           <AwesomeButtonSocial
@@ -58,7 +63,7 @@ const ContactPage = () => (
             GITHUB
           </AwesomeButtonSocial>
         </ButtonContainer>
-        <ButtonContainer>
+        {/* <ButtonContainer>
           <AwesomeButtonSocial
             type="facebook"
             ripple
@@ -68,7 +73,7 @@ const ContactPage = () => (
           >
             FACEBOOK
           </AwesomeButtonSocial>
-        </ButtonContainer>
+        </ButtonContainer> */}
         <ButtonContainer>
           <AwesomeButtonSocial
             type="instagram"
@@ -83,6 +88,6 @@ const ContactPage = () => (
       </div>
     </Container>
   </Layout>
-);
+)
 
-export default ContactPage;
+export default ContactPage

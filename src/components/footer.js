@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import React from 'react'
+import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 const Container = styled.div`
   display: flex;
@@ -15,14 +15,14 @@ const Container = styled.div`
   a {
     text-decoration: none;
   }
-`;
+`
 
 const Footer = ({ showing }) => (
   <div
     style={{
       textAlign: 'center',
       padding: '2em 0',
-      display: `${(showing === false) ? 'none' : 'block'}`,
+      display: `${showing === false ? 'none' : 'block'}`,
     }}
   >
     <div
@@ -37,7 +37,7 @@ const Footer = ({ showing }) => (
       }}
     >
       <Container>
-        <h4>{'Let\'s Talk'}</h4>
+        <h4>{"Let's Talk"}</h4>
         <p>
           {'Wanna get in touch or talk about a project?'}
           <br />
@@ -49,20 +49,20 @@ const Footer = ({ showing }) => (
             </span>
           </a>
           <br />
-          {'or drop a line in the form at the '}
+          {/* {'or drop a line in the form at the '}
           <Link to="/contact">
             <span style={{ color: '#0099ff', fontWeight: 'bold' }}>
               contact page
             </span>
-          </Link>
+          </Link> */}
         </p>
       </Container>
     </div>
   </div>
-);
+)
 
 Footer.propTypes = {
   showing: PropTypes.bool,
 }
 
-export default Footer;
+export default Footer
