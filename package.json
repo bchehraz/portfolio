@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Babak Chehraz <babak.chehraz@gmail.com>",
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.19.28",
     "gatsby-image": "^2.2.42",
